@@ -8,8 +8,14 @@ from .utils import TokenGenerator,generate_token
 from django.utils.encoding import force_bytes,force_str,DjangoUnicodeDecodeError
 from django.core.mail import EmailMessage
 from django.conf import settings
+
+from django.contrib.auth import authenticate,login,logout
+
 import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
+
+
+
 
 
 
@@ -65,7 +71,28 @@ class ActivateAccountView(View):
         return render(request,'activatefail.html')
 
 
+
 def handlelogin(request):
-    return render(request,'login.html')
+    if request.method=="POST":
+
+        username=request.POST['email']
+        userpassword=request.POST['pass1']
+        myuser=authenticate(username=username,password=userpassword)
+
+        if myuser is not None:
+            login(request,myuser)
+            messages.success(request,"Login Success")
+            return redirect('/')
+
+        else:
+            messages.error(request,"Invalid Credentials")
+            return redirect('/auth/login')
+
+    return render(request,'login.html')  
+
+
+
 def handlelogout(request):
+    logout(request)
+    messages.error(request,'Logout Success')
     return redirect('/auth/login')
