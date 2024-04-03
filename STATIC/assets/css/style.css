@@ -15,12 +15,12 @@ body {
 }
 
 a {
-  color: #e43c5c;
+  color: #4f0404;
   text-decoration: none;
 }
 
 a:hover {
-  color: #ea6981;
+  color: #403f3f;
   text-decoration: none;
 }
 
@@ -52,13 +52,13 @@ h6 {
 
 .back-to-top i {
   font-size: 28px;
-  color: #fff;
+  color: #ff0000;
   line-height: 0;
 }
 
 .back-to-top:hover {
   background: #e9607a;
-  color: #fff;
+  color: #af6161;
 }
 
 .back-to-top.active {
@@ -73,6 +73,7 @@ h6 {
   transition: all 0.5s;
   z-index: 997;
   padding: 20px 0;
+  text-decoration-color: #aaaaaa;
 }
 
 #header .logo {
@@ -86,7 +87,7 @@ h6 {
 }
 
 #header .logo a {
-  color: #fff;
+  color: #ec6565;
 }
 
 #header .logo img {
@@ -358,10 +359,11 @@ h6 {
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
+
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../../images/zzzz.jpeg") top center;
+  background: url("../../images/nnnn.jpg") top center;
   background-size: cover;
   position: relative;
 }
